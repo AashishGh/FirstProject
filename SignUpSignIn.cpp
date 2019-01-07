@@ -23,7 +23,8 @@ string Password(){return password;}
 
 int main()
 {char ch[20];
-int choice,recordstatus=0;
+int choice;
+int recordstatus=0;
 string usrname,pasword;
 Account ac;
 fstream file("ListOfAccounts.txt",ios::ate|ios::in|ios::out|ios::binary);
@@ -41,7 +42,8 @@ file.write((char*)&ac,sizeof(ac));
 }
 //LogIn:
 else if(choice==2)
-{system("cls");
+{ 
+system("cls");
 cout<<"\nEnter Username:";
 cin>>usrname;
 cout<<"\nEnter Password:";
@@ -55,10 +57,10 @@ if (usrname==ac.Username() && pasword==ac.Password()){
     break;
 }
 file.read((char*)&ac,sizeof(ac));}
- if (recordstatus==0){cout<<"\nInvalid Username or Password;}
+ if (recordstatus==0){cout<<"\nInvalid Username or Password";}
 }
 else if(choice==3){cout<<"\n"<<setw(32)<<"WE ARE EXITING";}
-else{cout<<"\n"<<setw(32)<<"Invalid Option!! TryAgain!!";}
+else {cout<<"\n"<<setw(32)<<"Invalid Option!! TryAgain!!";}
 } while(choice!=1 && choice!=2 && choice!=3);
 
 getch();

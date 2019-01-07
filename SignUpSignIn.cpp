@@ -27,13 +27,13 @@ int choice;
 string usrname,pasword;
 Account ac;
 fstream file("ListOfAccounts.txt",ios::ate|ios::in|ios::out|ios::binary);
-do { 
+do { system("cls");
 display();
 cin>>choice;
 //choices_Starts_here
 //Choice1_SignUp:
 if (choice==1)
-{
+{system("cls");
 cout<<"\nCreating new Account\n";
 ac.CreateAccount();
 file.seekp(0,ios::end);
@@ -41,7 +41,7 @@ file.write((char*)&ac,sizeof(ac));
 }
 //LogIn:
 else if(choice==2)
-{
+{system("cls");
 cout<<"\nEnter Username:";
 cin>>usrname;
 cout<<"\nEnter Password:";
